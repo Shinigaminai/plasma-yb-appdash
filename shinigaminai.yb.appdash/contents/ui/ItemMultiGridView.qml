@@ -117,7 +117,7 @@ PlasmaExtras.ScrollArea {
 
                     level: 1
 
-                    text: "placeholder" //repeater.model.modelForRow(index).description //TODO!!!FIX
+                    text: repeater.model.modelForRow(index).description
                 }
 
                 PlasmaCore.SvgItem {
