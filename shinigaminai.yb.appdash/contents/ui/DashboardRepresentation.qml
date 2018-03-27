@@ -291,7 +291,7 @@ Kicker.DashboardWindow {
 
             y: (middleRow.anchors.topMargin / 2) - (smallScreen ? (height/10) : 0)
 
-            font.pointSize: dummyHeading.font.pointSize * 1.5
+            font.pointSize: dummyHeading.font.pointSize * 1.0//1.5
 
             elide: Text.ElideRight
             wrapMode: Text.NoWrap
@@ -345,7 +345,7 @@ Kicker.DashboardWindow {
             }
         }
 
-        // active Widget design
+        // activated Widget design
         Row {
             id: middleRow
 
@@ -599,7 +599,7 @@ Kicker.DashboardWindow {
                             mainColumn.visibleGrid = mainGrid;
                         }
                     }
-
+/*
                     PlasmaExtras.Heading {
                         id: mainColumnLabel
 
@@ -619,7 +619,7 @@ Kicker.DashboardWindow {
                         level: 1
 
                         text: (tabBar.activeTab == 0) ? funnelModel.description : i18n("Widgets")
-                    }
+                    }*/
 
                     PlasmaCore.SvgItem {
                         id: mainColumnLabelUnderline
@@ -1071,14 +1071,14 @@ Kicker.DashboardWindow {
             }*/
         }
 
-        // right click on desktopwidget open contextMenu
+        // right click anywhere whilst active --> open contextMenu
         onPressed: {
             if (mouse.button == Qt.RightButton) {
                 contextMenu.open(mouse.x, mouse.y);
             }
         }
 
-        // left click on desktopwidget root.toggle()
+        // left click --> root.toggle() --> close
         onClicked: {
             if (mouse.button == Qt.LeftButton) {
                 root.toggle();
